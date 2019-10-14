@@ -14,8 +14,8 @@
 
 // temporal shortcuts
 	var a, b;
-	a = d.getElementById('bt-link-d');
-	b = d.getElementById('sub-bt-link-4-2');
+	a = d.getElementById('bt-link-f');
+	b = d.getElementById('sub-bt-link-6-3');
 	setTimeout(()=>{
 		a.click();
 		setTimeout(()=>{
@@ -42,7 +42,7 @@
 		eTarget = event.currentTarget.id;
 		var content, items, elem, print;
 		content = d.getElementById(eTarget).getAttribute('content');
-		xTitles[1].style = urlbar.st.active;
+		xTitles[1].style = 'display: flex; opacity: 1;';
 		xH1[1].innerHTML = content;
 		for(var i=0; i<group.length; i++){
 			group[i].style = 'display: none;';
