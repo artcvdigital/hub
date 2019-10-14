@@ -13,15 +13,15 @@
 	rdactive = false;
 
 // temporal shortcuts
-	var a, b;
-	a = d.getElementById('bt-link-f');
-	b = d.getElementById('sub-bt-link-6-3');
-	setTimeout(()=>{
-		a.click();
-		setTimeout(()=>{
-			b.click();
-		}, 1);
-	}, 1);
+	// var a, b;
+	// a = d.getElementById('bt-link-f');
+	// b = d.getElementById('sub-bt-link-6-3');
+	// setTimeout(()=>{
+	// 	a.click();
+	// 	setTimeout(()=>{
+	// 		b.click();
+	// 	}, 1);
+	// }, 1);
 
 // methods
 	function timer(fn, delay){
