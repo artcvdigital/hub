@@ -1,0 +1,273 @@
+.r-a{
+	animation: a-ra 1s infinite linear;
+}
+@keyframes a-ra{
+	30%{
+		transform: scale(.9,.9);
+	}
+	60%{
+		transform: scale(1.6,1.6);
+	}
+}
+.r-b{
+	animation: a-rb .6s infinite linear;
+}
+@keyframes a-rb{
+	to{
+		transform: rotate(180deg);
+	}
+}
+.r-c{
+	animation: a-rc .6s infinite linear;
+}
+@keyframes a-rc{
+	to{
+		transform: rotate(-180deg);
+	}
+}
+.r-d{
+	animation: a-rd 1.4s infinite ease-in-out alternate;
+}
+@keyframes a-rd{
+	to{
+		transform: rotate(1080deg);
+	}
+}
+.r-e{
+	animation: a-re .4s infinite linear;
+}
+@keyframes a-re{
+	50%{
+		opacity: 0;
+	}
+}
+.r-f{
+	animation: a-rf .6s infinite linear;
+}
+@keyframes a-rf{
+	to{
+		transform: rotate(360deg);
+	}
+}
+.r-g{
+	animation: a-rg .6s infinite linear;
+}
+@keyframes a-rg{
+	to{
+		transform: rotate(-360deg);
+	}
+}
+.r-h{
+	animation: a-rh 7s infinite linear;
+}
+@keyframes a-rh{
+	to{
+		transform: rotate(360deg);
+	}
+}
+.r-i{
+	animation: a-ri 1.8s infinite linear;
+}
+@keyframes a-ri{
+	to{
+		transform: rotate(-360deg);
+	}
+}
+.r-j{
+	animation: a-rj 1.4s infinite ease;
+}
+@keyframes a-rj{
+	25%{
+		border-color: rgba(0,255,255,.6) rgba(0,255,255,.05);
+	}
+	75%{
+		border-color: rgba(0,255,255,.05) rgba(0,255,255,.6);
+	}
+}
+.r-k{
+	animation: a-rk 1.4s infinite linear;
+}
+@keyframes a-rk{
+	to{
+		transform: rotate(360deg);
+	}
+}
+.r-l{
+	animation: a-rl .9s infinite linear;
+}
+@keyframes a-rl{
+	25%{
+		border-style: dotted;
+	}
+	55%{
+		border-style: dashed;
+	}
+	75%{
+		border-style: solid;
+	}
+}
+.r-m{
+	animation: a-rm .55s infinite ease-in-out;
+}
+@keyframes a-rm{
+	from{
+		transform: scale(1,1);
+	}
+	60%{
+		transform: scale(.9,.9);
+	}
+}
+.r-n{
+	animation: a-rn 6s infinite linear;
+}
+@keyframes a-rn{
+	to{
+		transform: rotate(-360deg);
+	}
+}
+.r-o{
+	animation: a-ro 4.5s infinite linear;
+}
+@keyframes a-ro{
+	to{
+		transform: rotate(360deg);
+	}
+}
+.r-p{
+	animation: a-rp 6s infinite linear;
+}
+@keyframes a-rp{
+	80%{
+		transform: rotate(900deg);
+	}
+}
+.r-q{
+	animation: a-rq 3.5s infinite linear;
+}
+@keyframes a-rq{
+	to{
+		transform: rotate(-360deg);
+	}
+}
+.r-r{
+	animation: a-rr .5s infinite ease-in-out;
+}
+@keyframes a-rr{
+	50%{
+		border-width: 2.5vh;
+	}
+}
+.r-s{
+	animation: a-rs 2.5s infinite ease-in-out;
+}
+@keyframes a-rs{
+	5%{
+		transform: rotate(0deg);
+	}
+	25%{
+		transform: rotate(-35deg);
+	}
+	50%{
+		transform: rotate(0deg);
+	}
+	75%{
+		transform: rotate(35deg);
+	}
+	95%{
+		transform: rotate(0deg);
+	}
+}
+.r-t{
+	animation: a-rt .8s infinite linear;
+}
+@keyframes a-rt{
+	to{
+		transform: rotate(360deg);
+	}
+}
+.r-u{
+	animation: a-ru .8s infinite linear;
+}
+@keyframes a-ru{
+	to{
+		transform: rotate(-360deg);
+	}
+}
+.r-v{
+	animation: a-rv 16s infinite linear;
+}
+@keyframes a-rv{
+	to{
+		transform: rotate(360deg);
+	}
+}
+.r-w{
+	animation: a-rw 60s infinite linear;
+}
+@keyframes a-rw{
+	to{
+		transform: rotate(-360deg);
+	}
+}
+.r-x{
+	animation: a-rx 8s infinite linear;
+}
+@keyframes a-rx{
+	to{
+		transform: rotate(-360deg);
+	}
+}
+.r-y{
+	animation: a-ry 1s infinite ease-in-out;
+}
+@keyframes a-ry{
+	from{
+		transform: scale(1.1,1.1);
+		opacity: 0;
+	}
+	20%{
+		opacity: .5;
+	}
+	to{
+		transform: scale(0,0);
+		opacity: 1;
+	}
+}
+.r-z{
+	animation: a-rz 2s infinite linear;
+}
+@keyframes a-rz{
+	20%{
+		transform: scale(1.1,1.1);
+	}
+	40%{
+		transform: scale(1,1);
+	}
+	60%{
+		transform: scale(1,1);
+	}
+	80%{
+		transform: scale(.9,.9);
+	}
+}
+.x-titles{
+	animation: a-panel-general-link .4s ease-in-out;
+}
+@keyframes a-panel-general-link{
+	from{
+		transform: translate(-5em,0);
+		opacity: 0;
+	}
+	60%{
+		transform: translate(1em,0);
+	}
+}
+.fraction{
+	animation: a-fraction .6s ease-in-out;
+}
+@keyframes a-fraction{
+	from{
+		transform: scale(1.5,1.5);
+		opacity: 0;
+	}
+}

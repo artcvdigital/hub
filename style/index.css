@@ -1,0 +1,280 @@
+:root{
+	--bg: -webkit-linear-gradient(top, rgba(0,255,255,.05) 10%, transparent, rgba(0,255,255,.05) 90%);
+	--bg-b: -webkit-linear-gradient(top, rgba(0,255,255,.1) 15%, rgba(0,255,255,.01), rgba(0,255,255,.1) 85%);
+	--bg-c: -webkit-linear-gradient(left, rgba(0,255,255,.3), rgba(0,255,255,.1) 3%, transparent, rgba(0,255,255,.1) 97%, rgba(0,255,255,.3));
+	--bg-d: -webkit-linear-gradient(-45deg, rgba(10,20,25,.8), rgba(10,20,25,.6) 9%, rgba(10,20,25,.4), rgba(10,20,25,.6) 91%, rgba(10,20,25,.8));
+	--pgl-hover: -webkit-linear-gradient(90deg, rgba(0,255,255,.75) 12%, transparent 12%, transparent 15%, rgb(0,255,255) 15%, rgb(0,255,255) 17%, transparent 17%, transparent 83%, rgb(0,255,255) 83%, rgb(0,255,255) 85%, transparent 85%, transparent 88%, rgba(0,255,255,.75) 88%) center;
+}
+::-webkit-scrollbar{
+	width: 6px;
+	background: rgb(5,15,20);
+	border-radius: 2px;
+}
+::-webkit-scrollbar-thumb{
+	background: rgba(0,255,255,.2);
+}
+*:hover::-webkit-scrollbar-thumb{
+	background: rgba(0,255,255,.4);
+}
+*{
+	margin: 0;
+	padding: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	box-sizing: border-box;
+	cursor: default;
+}
+html{
+	background: rgb(10,20,25);
+	font-family: 'Rajdhani', sans-serif;
+	overflow: hidden;
+}
+#site{
+	width: 100%;
+	height: 100vh;
+}
+#section{
+	position: relative;
+}
+#full-panel{
+	margin: 7.5vh 10%;
+	width: 80%;
+	height: 85vh;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 4em calc(100% - 10em) 3em;
+	grid-gap: 1.5em;
+}
+#grid-title-bar{
+	display: grid;
+	background: var(--bg);
+	grid-template-columns: max-content max-content max-content;
+	z-index: 1;
+}
+#grid-title-bar > div{
+	height: 4em;
+}
+.x-titles{
+	width: max-content;
+	margin-right: .75em;
+	background: var(--bg-b);
+	border-radius: 2px;
+	display: none; /* flex-on */
+	align-items: center;
+	transition: .15s;
+	position: relative;
+}
+.x-titles,
+.x-titles *{
+	font-weight: 200;
+	cursor: pointer;
+}
+#c-title{
+	background: rgba(0,255,255,.15);
+}
+#c-title,
+#c-h1{
+	cursor: default;
+}
+.x-h1{
+	padding: 0 1.5em;
+	color: rgb(0,255,255);
+	font-size: 1.2em;
+}
+#a-title{
+	display: flex;
+}
+#footer{
+	background: var(--bg);
+}
+#rings-wrapper{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: .2;
+	z-index: -1;
+}
+.this-r{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+#f-st{
+	display: grid;
+}
+.fraction{
+	width: 100%;
+	height: 100%;
+	color: rgb(0,255,255);
+	background: var(--bg-d);
+	display: none; /* grid-on */
+	grid-template-columns: repeat(2, 50%);
+	box-shadow:
+		inset 3em 0 9em rgba(0,255,255,.03),
+		inset -3em 0 9em rgba(0,255,255,.03),
+		inset 0 0 9em rgba(0,255,255,.03);
+	position: absolute;
+	overflow-y: auto;
+}
+.flex-fraction{
+	width: 100%;
+	height: max-content;
+	margin: 0 auto;
+	display: flex;
+	align-self: center;
+	position: relative;
+}
+.flex-fraction div{
+	width: 50%;
+	margin: 0 25%;
+}
+.panel-general-link{
+	width: 100%;
+	margin: 1.5em 0 1.2em;
+	padding: 10%;
+	color: rgba(0,255,255,.5);
+	font-size: 1em;
+	font-family: 'Rajdhani', sans-serif;
+	text-align: center;
+	background: var(--bg-b);
+	border-width: 1em;
+	border-style: none solid;
+	border-color: transparent rgba(0,255,255,.03);
+	transition: .2s;
+	display: block;
+	position: relative;
+	cursor: pointer;
+}
+.panel-general-link:hover{
+	color: rgb(0,255,255);
+	background: var(--pgl-hover);
+	background-size: 100%;
+	border-width: 1px;
+	border-color: transparent rgb(0,255,255);
+	transform: scale(1.05,1.05);
+	box-shadow:
+		inset 0 0 1em rgb(0,255,255),
+		inset 0 0 2em rgb(0,255,255),
+		inset 0 0 3em rgb(0,255,255),
+		0 0 .5em rgba(0,255,255,.5),
+		0 0 1em rgba(0,255,255,.25),
+		0 0 1.5em rgba(0,255,255,.1);
+}
+.panel-general-link:hover ~ .panel-general-link{
+	opacity: .3;
+}
+.panel-general-link:focus{
+	outline: none;
+}
+.panel-general-link::before{
+	content: '';
+	width: 0;
+	height: 0;
+	background: var(--bg-c);
+	border-width: 1px;
+	border-style: none solid;
+	border-color: rgba(0,255,255,.1) rgb(0,255,255);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 0;
+	transition: .1s;
+	z-index: -1;
+}
+.panel-general-link:hover::before{
+	width: calc(100% + 4em);
+	height: calc(100% + 6em);
+	box-shadow:
+		inset 1em 0 1em rgba(0,255,255,.25),
+		inset 1em 0 2em rgba(0,255,255,.25),
+		inset -1em 0 1em rgba(0,255,255,.25),
+		inset -1em 0 2em rgba(0,255,255,.25),
+		0 0 .5em rgba(0,255,255,.5),
+		0 0 1em rgba(0,255,255,.25),
+		0 0 1.5em rgba(0,255,255,.1);
+	top: -1em;
+	left: -2em;
+	transition: .3s;
+	opacity: 1;
+}
+/*
+#:hover::after{
+	content: '';
+}
+ */
+.panel-general-link:hover::after{
+	content: 'preview de contenido aquí';
+	width: 100%;
+	max-height: 2em;
+	padding: .4em;
+	color: rgb(0,255,255);
+	background: transparent;
+	text-align: center;
+	overflow: hidden;
+	position: absolute;
+	top: calc(100% + 1em);
+	left: 0;
+	opacity: 1;
+	z-index: 1;
+}
+.a-link{
+	width: 100%;
+	margin: 1em 0 1em;
+	padding: .5em;
+	color: rgba(0,255,255,.5);
+	font-family: 'Rajdhani', sans-serif;
+	text-decoration: none;
+	text-align: center;
+	background: var(--bg-b);
+	border: 1px solid transparent;
+	transition: .2s;
+	display: block;
+	position: relative;
+	cursor: pointer;
+}
+.a-link:hover{
+	color: rgb(0,255,255);
+	background: var(--bg-d);
+	background-size: 100%;
+	box-shadow:
+		inset 0 0 .5em rgb(0,255,255),
+		0 0 .25em rgba(0,255,255,.5);
+	border: 1px solid rgb(0,255,255);
+}
+.flex-fraction:nth-child(1) .a-link:hover{
+	transform: scale(1.2,1.2) translate(2em,0);
+}
+.flex-fraction:nth-child(2) .a-link:hover{
+	transform: scale(1.2,1.2) translate(-2em,0);
+}
+.link-separator{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: rgb(0,255,255);
+	font-size: 1em;
+	font-weight: 200;
+	text-align: left;
+	background: none;
+	border: none;
+	box-shadow: none;
+	transform: none !important;
+	cursor: default;
+}
+.link-separator:hover{
+	background: none;
+	border: none;
+	box-shadow: none;
+	transform: none !important;
+	cursor: default;
+}
+.group::before,
+.group::after,
+.group:hover::before,
+.group:hover::after{
+	display: none;
+}
