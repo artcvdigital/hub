@@ -1,9 +1,10 @@
 // boxes
-	var d,
-			panelGeneralLink, eTarget, xTitles, xH1, fraction, group, aLink, rdactive;
+	var d, site,
+			panelGeneralLink, eTarget, xTitles, xH1, fraction, group, aLink, rdactive, ring;
 
 // file
 	d = document;
+	site = d.getElementById('site');
 	panelGeneralLink = d.getElementsByClassName('pgl');
 	xTitles = d.getElementsByClassName('x-titles');
 	xH1 = d.getElementsByClassName('x-h1');
@@ -11,11 +12,12 @@
 	group = d.getElementsByClassName('group')
 	aLink = d.getElementsByClassName('a-link')
 	rdactive = false;
+	ring = d.getElementsByClassName('ring');
 
 // temporal shortcuts
 	// var a, b;
-	// a = d.getElementById('bt-link-f');
-	// b = d.getElementById('sub-bt-link-6-3');
+	// a = d.getElementById('bt-link-d');
+	// b = d.getElementById('sub-bt-link-4-1');
 	// setTimeout(()=>{
 	// 	a.click();
 	// 	setTimeout(()=>{
@@ -117,7 +119,46 @@
 		rdactive = false;
 	};
 
+	function showOffMainMenuLinks(){
+		for(var i=0; i<panelGeneralLink.length; i++){
+			panelGeneralLink[i].style = 'display: block;';
+		};
+		xTitles[0].style = 'display: flex;';
+	};
+
+	function getCore(){
+		var delay, i, ringsWrapper;
+		delay = 1;
+		i = 0;
+		ringsWrapper = d.getElementById('rings-wrapper')
+		function callback(){
+			setTimeout(()=>{
+				ring[i].style = `opacity: 1; transition: .${delay}s`;
+				if(i < 15){
+					delay = delay + 10;
+				}else{
+					delay = delay + 2;
+				};
+				if(i > 16){
+					ringsWrapper.classList.add('bright-element');
+				};
+				i++;
+				if(i<ring.length){
+					callback();
+				}else{
+				};
+			}, delay)
+		};
+		callback();
+	};
+
+	function startsIn(){
+		listenTo(panelGeneralLink, urlbarMenu);
+		listenTo(xTitles, returnLayer)
+		listenTo(group, rdLayer);
+		timer(showOffMainMenuLinks, 1500);
+	};
+
 // events
-	listenTo(panelGeneralLink, urlbarMenu);
-	listenTo(xTitles, returnLayer)
-	listenTo(group, rdLayer);
+	getCore();
+	startsIn();

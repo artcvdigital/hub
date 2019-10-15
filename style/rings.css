@@ -1,6 +1,8 @@
 .ring{
 	position: absolute;
 	border-radius: 50%;
+	opacity: 0;
+	transition: .4s;
 }
 .r-a{
 	width: 1vh;

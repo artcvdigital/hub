@@ -60,7 +60,6 @@ html{
 	width: max-content;
 	margin-right: .75em;
 	background: var(--bg-b);
-	border-radius: 2px;
 	display: none; /* flex-on */
 	align-items: center;
 	transition: .15s;
@@ -72,7 +71,10 @@ html{
 	cursor: pointer;
 }
 #c-title{
-	background: rgba(0,255,255,.15);
+	background: rgba(0,255,255,.2);
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(0,255,255,.6);
 }
 #c-title,
 #c-h1{
@@ -83,9 +85,6 @@ html{
 	color: rgb(0,255,255);
 	font-size: 1.2em;
 }
-#a-title{
-	display: flex;
-}
 #footer{
 	background: var(--bg);
 }
@@ -95,7 +94,6 @@ html{
 	position: fixed;
 	top: 0;
 	left: 0;
-	opacity: .2;
 	z-index: -1;
 }
 .this-r{
@@ -145,7 +143,7 @@ html{
 	border-style: none solid;
 	border-color: transparent rgba(0,255,255,.03);
 	transition: .2s;
-	display: block;
+	display: none;
 	position: relative;
 	cursor: pointer;
 }
@@ -201,25 +199,45 @@ html{
 	transition: .3s;
 	opacity: 1;
 }
-/*
-#:hover::after{
-	content: '';
+#bt-link-b:hover::before{
+	height: calc(100% + 7em);
 }
- */
+#bt-link-a:hover::after{
+	content: 'ADMINISTRACION, FORMULARIOS & RESPUESTAS, EBOOKS & DOCUMENTOS';
+}
+#bt-link-b:hover::after{
+	content: 'CORREOS ELECTRONICOS, BANCA EN LINEA & OTROS, ALMACENAMIENTO EN LA NUBE, DISEÑO & DESARROLLO WEB, TIENDAS EN LINEA';
+}
+#bt-link-c:hover::after{
+	content: 'APRENDIZAJE & CONSULTAS, GUIAS GUARDADAS, APLICACIONES & UTILIDADES, BLOGS & OTROS';
+}
+#bt-link-d:hover::after{
+	content: 'HERRAMIENTAS PARA DESARROLLADOR, TRADUCTORES & GRAMATICA, EDICION DE ARCHIVOS, SITIOS DE DESCARGA';
+}
+#bt-link-e:hover::after{
+	content: 'TIPOGRAFIAS, ICONOS, IMAGENES, VIDEOS';
+}
+#bt-link-f:hover::after{
+	content: 'REDES SOCIALES, VIDEO, SITIOS DE ENTRETENIMIENTO';
+}
 .panel-general-link:hover::after{
-	content: 'preview de contenido aquí';
+	content: '';
 	width: 100%;
 	max-height: 2em;
 	padding: .4em;
 	color: rgb(0,255,255);
-	background: transparent;
+	font-size: 1em;
 	text-align: center;
+	background: transparent;
 	overflow: hidden;
 	position: absolute;
 	top: calc(100% + 1em);
 	left: 0;
 	opacity: 1;
 	z-index: 1;
+}
+#bt-link-b:hover::after{
+	max-height: 3em;
 }
 .a-link{
 	width: 100%;

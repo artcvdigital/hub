@@ -271,3 +271,75 @@
 		opacity: 0;
 	}
 }
+.panel-general-link,
+.a-link{
+	animation: a-panel-general-link .6s ease-out;
+}
+@keyframes a-panel-general-link{
+	from{
+		width: 60%;
+		border-radius: 1em;
+		filter: brightness(999%);
+		transform: rotateX(360deg) rotateY(12deg);
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	60%{
+		transform: rotateX(90deg) rotateY(0deg) scale(.95,.95);
+		filter: brightness(999%);
+	}
+}
+.detail-site-review{
+	animation: a-detail-site-review 2s ease-out;
+}
+@keyframes a-detail-site-review{
+	from{
+		background: -webkit-linear-gradient(
+			top,
+			rgba(0,255,255,.05) 10%,
+			transparent,
+			rgba(0,255,255,.05) 90%) left no-repeat;
+		background-size: 0% 100%;
+	}
+	to{
+		background: -webkit-linear-gradient(
+			top,
+			rgba(0,255,255,.05) 10%,
+			transparent,
+			rgba(0,255,255,.05) 90%) left no-repeat;
+		background-size: 100% 100%;
+	}
+}
+#rings-wrapper > div{
+	animation: a-rings-wrapper-div 1s ease-in-out;
+}
+@keyframes a-rings-wrapper-div{
+	from{
+		transform: scale(2,2);
+		opacity: 0;
+	}
+}
+.bright-element{
+	animation: a-bright-elem .15s ease-in-out;
+	animation-iteration-count: 3;
+}
+@keyframes a-bright-elem{
+	30%{
+		transform: scale(1,1);
+	}
+	40%{
+		transform: scale(1.1,1.1);
+	}
+	50%{
+		filter: brightness(999%);
+		transform: scale(.9,.9);
+	}
+	60%{
+		transform: scale(1.1,1.1);
+	}
+	70%{
+		transform: scale(1,1);
+	}
+}
