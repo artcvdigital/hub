@@ -1,7 +1,7 @@
 // boxes
 	var d, site,
 			panelGeneralLink, eTarget, xTitles, xH1, fraction, group, aLink, ndactive, rdactive, ring, progressBarValue,
-			subRingsWrapper;
+			subRingsWrapper, dt, months, time;
 
 // file
 	d = document;
@@ -18,6 +18,9 @@
 	subFooterWrapper = d.getElementById('sub-footer-wrapper');
 	progressBarValue = d.getElementById('progress-bar-value');
 	subRingsWrapper = d.getElementById('sub-rings-wrapper');
+	dt = new Date();
+	months = ['ENE', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+	time = d.getElementsByClassName('time');
 
 // methods
 	function timer(fn, delay){
@@ -174,7 +177,34 @@
 		timer(callback1, 950);
 	};
 
+		var tt;
+	function setTime(){
+		tt = new Date();
+		if(tt.getHours() < 10){
+			time[0].innerHTML = `0${tt.getHours()}`;
+		}else{
+			time[0].innerHTML = tt.getHours();
+		};
+		if(tt.getMinutes() < 10){
+			time[1].innerHTML = `0${tt.getMinutes()}`;
+		}else{
+			time[1].innerHTML = tt.getMinutes();
+		};
+		if(tt.getSeconds() < 10){
+			time[2].innerHTML = `0${tt.getSeconds()}`;
+		}else{
+			time[2].innerHTML = tt.getSeconds();
+		};
+		setTimeout(()=>{
+			setTime();
+		}, 1000);
+	};
+
 	function startsIn(){
+		d.getElementById('print-date').innerHTML = `${dt.getDate()}.${months[(dt.getMonth()-1)]}.${dt.getFullYear()}`;
+		setTime();
+		d.getElementsByClassName('screen-res')[0].innerHTML = window.innerWidth;
+		d.getElementsByClassName('screen-res')[1].innerHTML = window.innerHeight;
 		listenTo(panelGeneralLink, urlbarMenu);
 		listenTo(xTitles, returnLayer)
 		listenTo(group, rdLayer);
@@ -182,5 +212,8 @@
 	};
 
 // events
+	window.oncontextmenu = ()=>{
+		return false;
+	};
 	getCore();
 	startsIn();
