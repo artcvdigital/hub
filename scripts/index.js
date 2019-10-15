@@ -1,6 +1,7 @@
 // boxes
 	var d, site,
-			panelGeneralLink, eTarget, xTitles, xH1, fraction, group, aLink, ndactive, rdactive, ring, progressBarValue;
+			panelGeneralLink, eTarget, xTitles, xH1, fraction, group, aLink, ndactive, rdactive, ring, progressBarValue,
+			subRingsWrapper;
 
 // file
 	d = document;
@@ -16,17 +17,7 @@
 	ring = d.getElementsByClassName('ring');
 	subFooterWrapper = d.getElementById('sub-footer-wrapper');
 	progressBarValue = d.getElementById('progress-bar-value');
-
-// temporal shortcuts
-	// var a, b;
-	// a = d.getElementById('bt-link-d');
-	// b = d.getElementById('sub-bt-link-4-1');
-	// setTimeout(()=>{
-	// 	a.click();
-	// 	setTimeout(()=>{
-	// 		b.click();
-	// 	}, 1);
-	// }, 1);
+	subRingsWrapper = d.getElementById('sub-rings-wrapper');
 
 // methods
 	function timer(fn, delay){
@@ -59,6 +50,7 @@
 		for(var i=0; i<print.length; i++){
 			print[i].style = 'display: block;';
 		};
+		subRingsWrapper.style = 'display: block; transform: scale(.5,.5); transition: .6s ease-in-out;';
 		fraction[0].style = 'display: grid; transform: scale(.6,.6); transition: .6s ease-in-out;';
 		fraction[1].style = 'display: grid;';
 		ndactive = true;
@@ -80,8 +72,9 @@
 		};
 		xTitles[2].style = 'display: flex;';
 		xH1[2].innerHTML = content;
-		fraction[0].style = 'display: grid; transform: scale(.3,.3); transition: 1s ease-out;';
-		fraction[1].style = 'display: grid; transform: scale(.6,.6); transition: 1s ease-out;';
+		subRingsWrapper.style = 'display: block; transform: scale(.2,.2); transition: .6s ease-in-out;';
+		fraction[0].style = 'display: grid; transform: scale(.3,.3); transition: .6s ease-in-out;';
+		fraction[1].style = 'display: grid; transform: scale(.6,.6); transition: .6s ease-in-out;';
 		fraction[2].style = 'display: grid;';
 		rdactive = true;
 	};
@@ -101,9 +94,12 @@
 					setTimeout(()=>{
 						fraction[2].style = 'display: none;';
 						fraction[1].style = 'display: none;';
+						setTimeout(()=>{
+							subRingsWrapper.style = 'display: block; transform: scale(1,1); transition: .4s;';
+						}, 100);
 						fraction[0].style = 'transform: scale(1,1); transition: .4s;';
-					}, 300);
-				}, 300);
+					}, 50);
+				}, 50);
 			}else{
 				fraction[1].style = 'display: grid; transform: scale(1.2,1.2); opacity: 0; transition: .3s;';
 				xTitles[1].style = 'display: flex; transform: translate(-3em,0); opacity: 0; transition: .3s;';
@@ -111,7 +107,10 @@
 					xTitles[1].style = 'display: none;';
 					fraction[1].style = 'display: none;';
 					fraction[0].style = 'transform: scale(1,1); transition: .4s;';
-				}, 300);
+					setTimeout(()=>{
+						subRingsWrapper.style = 'display: block; transform: scale(1,1); transition: .4s;';
+					}, 100);
+				}, 50);
 			};
 		}else if(eTarget == 'b-title'){
 			fraction[2].style = 'display: grid; transform: scale(1.2,1.2); opacity: 0; transition: .4s;';
@@ -119,9 +118,14 @@
 			setTimeout(()=>{
 				xTitles[2].style = 'display: none;';
 				fraction[2].style = 'display: none;';
+				setTimeout(()=>{
+					fraction[0].style = 'display: grid; transform: scale(.6,.6); transition: .4s;';
+					setTimeout(()=>{
+						subRingsWrapper.style = 'display: block; transform: scale(.5,.5); transition: .4s;';
+					}, 100);
+				}, 50);
 				fraction[1].style = 'display: grid; transform: scale(1,1); transition: .4s;';
-				fraction[0].style = 'display: grid; transform: scale(.6,.6); transition: .4s;';
-			}, 300);
+			}, 50);
 		};
 		rdactive = false;
 	};

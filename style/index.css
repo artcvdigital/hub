@@ -332,7 +332,7 @@ html{
 		rgb(0,255,255) 80% 96%,
 		rgba(0,255,255,.5) 98%,
 		rgba(0,255,255,.3));
-	outline: 1px solid rgba(0,255,255,.5);
+	outline: 1px solid rgb(0,255,255);
 	outline-offset: -.2em;
 	display: none;
 }
