@@ -271,24 +271,44 @@
 		opacity: 0;
 	}
 }
-.panel-general-link,
-.a-link{
-	animation: a-panel-general-link .6s ease-out;
+.flex-fraction:nth-child(1) .panel-general-link,
+.flex-fraction:nth-child(1) .a-link{
+	animation: a-panel-general-link-a .8s ease-in-out;
 }
-@keyframes a-panel-general-link{
+@keyframes a-panel-general-link-a{
 	from{
-		width: 60%;
-		border-radius: 1em;
+		width: 75%;
 		filter: brightness(999%);
-		transform: rotateX(360deg) rotateY(12deg);
+		transform: rotateX(3600deg) translate(115%);
 		opacity: 0;
 	}
 	20%{
 		opacity: 1;
 	}
+	40%{
+		transform: rotateX(80deg) translate(115%);
+	}
 	60%{
-		transform: rotateX(90deg) rotateY(0deg) scale(.95,.95);
+		filter: brightness(700%);
+	}
+}
+.flex-fraction:nth-child(2) .panel-general-link,
+.flex-fraction:nth-child(2) .a-link{
+	animation: a-panel-general-link-b .8s ease-in-out;
+}
+@keyframes a-panel-general-link-b{
+	from{
+		width: 75%;
 		filter: brightness(999%);
+		transform: rotateX(3600deg) translate(-115%);
+		opacity: 0;
+	}
+	40%{
+		transform: rotateX(80deg) translate(-115%);
+	}
+	60%{
+		filter: brightness(700%);
+		opacity: 1;
 	}
 }
 .detail-site-review{
@@ -341,5 +361,39 @@
 	}
 	70%{
 		transform: scale(1,1);
+	}
+}
+#progress-bar-value{
+	animation: a-progressbar-value 1s ease-in-out;
+}
+@keyframes a-progressbar-value{
+	from{
+		opacity: 0;
+		width: 0;
+	}
+	20%{	
+		opacity: 1;
+	}
+	60%{
+		width: 100%;
+		opacity: 1;
+	}
+	to{
+		outline: 1px solid rgba(0,255,255,0);
+		outline-offset: 3em;
+		opacity: 0;
+	}
+}
+#sub-footer-wrapper{
+	animation: a-subfooter-wrapper 2.2s ease-in-out;
+}
+@keyframes a-subfooter-wrapper{
+	from{
+		opacity: 0;
+		transform: scale(1.4,1.4);
+	}
+	80%{
+		opacity: 0;
+		transform: scale(1.4,1.4);
 	}
 }

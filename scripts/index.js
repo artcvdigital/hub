@@ -1,6 +1,6 @@
 // boxes
 	var d, site,
-			panelGeneralLink, eTarget, xTitles, xH1, fraction, group, aLink, rdactive, ring;
+			panelGeneralLink, eTarget, xTitles, xH1, fraction, group, aLink, ndactive, rdactive, ring, progressBarValue;
 
 // file
 	d = document;
@@ -11,8 +11,11 @@
 	fraction = d.getElementsByClassName('fraction');
 	group = d.getElementsByClassName('group')
 	aLink = d.getElementsByClassName('a-link')
+	ndactive = false;
 	rdactive = false;
 	ring = d.getElementsByClassName('ring');
+	subFooterWrapper = d.getElementById('sub-footer-wrapper');
+	progressBarValue = d.getElementById('progress-bar-value');
 
 // temporal shortcuts
 	// var a, b;
@@ -42,6 +45,7 @@
 
 	function urlbarMenu(){
 		eTarget = event.currentTarget.id;
+		enProgressBar();
 		var content, items, elem, print;
 		content = d.getElementById(eTarget).getAttribute('content');
 		xTitles[1].style = 'display: flex; opacity: 1;';
@@ -57,10 +61,12 @@
 		};
 		fraction[0].style = 'display: grid; transform: scale(.6,.6); transition: .6s ease-in-out;';
 		fraction[1].style = 'display: grid;';
+		ndactive = true;
 	};
 
 	function rdLayer(){
 		eTarget = event.currentTarget.id;
+		enProgressBar();
 		for(var i=0; i<aLink.length; i++){
 			aLink[i].style = 'display: none;';
 		};
@@ -82,6 +88,7 @@
 
 	function returnLayer(){
 		eTarget = event.currentTarget.id;
+		enProgressBar();
 		if(eTarget == 'a-title'){
 			if(rdactive){
 				fraction[2].style = 'display: grid; transform: scale(1.2,1.2); opacity: 0; transition: .3s;';
@@ -150,6 +157,17 @@
 			}, delay)
 		};
 		callback();
+	};
+
+	function enProgressBar(){
+		function callback(){
+			progressBarValue.style = 'display: block;';
+		};
+		function callback1(){
+			progressBarValue.style = 'display: none;';
+		};
+		callback();
+		timer(callback1, 950);
 	};
 
 	function startsIn(){
