@@ -57,6 +57,9 @@
 		subRingsWrapper.style = 'display: block; transform: scale(.5,.5); transition: .6s ease-in-out;';
 		fraction[0].style = 'display: grid; transform: scale(.6,.6); transition: .6s ease-in-out;';
 		fraction[1].style = 'display: grid;';
+		setTimeout(()=>{
+			d.getElementById('f-nd').focus();
+		}, 1000);
 		ndactive = true;
 	};
 
@@ -234,6 +237,10 @@
 		};
 		window.addEventListener('mousemove', ()=>{
 			cz();
+		});
+		window.addEventListener('resize', ()=>{
+			d.getElementsByClassName('screen-res')[0].innerHTML = window.innerWidth;
+			d.getElementsByClassName('screen-res')[1].innerHTML = window.innerHeight;
 		});
 	};
 
