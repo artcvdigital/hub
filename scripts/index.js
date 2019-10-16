@@ -1,7 +1,7 @@
 // boxes
 	var d, site,
 			panelGeneralLink, eTarget, xTitles, xH1, fraction, group, aLink, ndactive, rdactive, ring, progressBarValue,
-			subRingsWrapper, dt, months, time;
+			subRingsWrapper, dt, months, time, cx, cy, printCoords;
 
 // file
 	d = document;
@@ -21,6 +21,7 @@
 	dt = new Date();
 	months = ['ENE', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 	time = d.getElementsByClassName('time');
+	printCoords = d.getElementsByClassName('print-coords');
 
 // methods
 	function timer(fn, delay){
@@ -200,6 +201,25 @@
 		}, 1000);
 	};
 
+	function cz(){
+		cx = event.clientX;
+		cy = event.clientY;
+		if(cx < 10){
+			printCoords[0].innerHTML = `00${cx}`;
+		}else if(cx < 100){
+			printCoords[0].innerHTML = `0${cx}`;
+		}else{
+			printCoords[0].innerHTML = cx;
+		};
+		if(cy < 10){
+			printCoords[1].innerHTML = `00${cy}`;
+		}else if(cy < 100){
+			printCoords[1].innerHTML = `0${cy}`;
+		}else{
+			printCoords[1].innerHTML = cy;
+		};
+	};
+
 	function startsIn(){
 		d.getElementById('print-date').innerHTML = `${dt.getDate()}.${months[(dt.getMonth()-1)]}.${dt.getFullYear()}`;
 		setTime();
@@ -209,11 +229,14 @@
 		listenTo(xTitles, returnLayer)
 		listenTo(group, rdLayer);
 		timer(showOffMainMenuLinks, 1500);
+		window.oncontextmenu = ()=>{
+			return false;
+		};
+		window.addEventListener('mousemove', ()=>{
+			cz();
+		});
 	};
 
 // events
-	window.oncontextmenu = ()=>{
-		return false;
-	};
 	getCore();
 	startsIn();

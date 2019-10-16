@@ -86,7 +86,6 @@ html{
 	font-size: 1.2em;
 }
 #footer{
-	overflow-x: auto;
 	background: var(--bg);
 }
 #sub-footer-wrapper{
@@ -353,4 +352,7 @@ html{
 .time:nth-child(2),
 .time:nth-child(3){
 	margin-left: .3em;
+}
+.print-coords{
+	margin-left: .25em;
 }
