@@ -8,7 +8,7 @@
 ::-webkit-scrollbar{
 	width: 6px;
 	height: 3px;
-	background: rgb(5,15,20);
+	background: rgb(10,20,25);
 	border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb{
@@ -29,8 +29,13 @@
 }
 html{
 	background: rgb(10,20,25);
-	font-family: 'Rajdhani', sans-serif;
 	overflow: hidden;
+}
+html,
+html *{
+	color: rgb(0,255,255);
+	font-weight: 400;
+	font-family: 'Rajdhani', sans-serif;
 }
 #site{
 	width: 100%;
@@ -83,7 +88,6 @@ html{
 }
 .x-h1{
 	padding: 0 1.5em;
-	color: rgb(0,255,255);
 	font-size: 1.2em;
 }
 #footer{
@@ -113,7 +117,6 @@ html{
 .fraction{
 	width: 100%;
 	height: 100%;
-	color: rgb(0,255,255);
 	background: var(--bg-d);
 	display: none; /* grid-on */
 	grid-template-columns: repeat(2, 50%);
@@ -140,9 +143,7 @@ html{
 	width: 100%;
 	margin: 1.5em 0 1.2em;
 	padding: 10%;
-	color: rgba(0,255,255,.5);
 	font-size: 1em;
-	font-family: 'Rajdhani', sans-serif;
 	text-align: center;
 	background: var(--bg-b);
 	border-width: 1em;
@@ -154,7 +155,6 @@ html{
 	cursor: pointer;
 }
 .panel-general-link:hover{
-	color: rgb(0,255,255);
 	background: var(--pgl-hover);
 	background-size: 100%;
 	border-width: 1px;
@@ -231,7 +231,6 @@ html{
 	width: 100%;
 	max-height: 2em;
 	padding: .4em;
-	color: rgb(0,255,255);
 	font-size: 1em;
 	text-align: center;
 	background: transparent;
@@ -249,19 +248,17 @@ html{
 	width: 100%;
 	margin: 1em 0 1em;
 	padding: .5em;
-	color: rgba(0,255,255,.5);
-	font-family: 'Rajdhani', sans-serif;
 	text-decoration: none;
 	text-align: center;
+	text-transform: uppercase;
 	background: var(--bg-b);
 	border: 1px solid transparent;
-	transition: .2s;
 	display: block;
 	position: relative;
 	cursor: pointer;
+	transition: .2s;
 }
 .a-link:hover{
-	color: rgb(0,255,255);
 	background: var(--bg-d);
 	background-size: 100%;
 	box-shadow:
@@ -279,7 +276,6 @@ html{
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	color: rgb(0,255,255);
 	font-size: 1em;
 	font-weight: 200;
 	text-align: left;
@@ -307,7 +303,6 @@ html{
 	min-width: max-content;
 	height: 100%;
 	padding: 0 1em;
-	color: rgb(0,255,255);
 	font-size: 1em;
 	font-weight: 200;
 	letter-spacing: 2px;
@@ -369,7 +364,6 @@ html{
 		width: 100%;
 		margin: 2em 0 .5em;
 		padding: 8% 5%;
-		color: rgba(0,255,255,.5);
 		font-size: .9em;
 	}
 	.h3-footer-title{
